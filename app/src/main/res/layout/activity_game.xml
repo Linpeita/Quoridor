@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_center"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtn_damboard_vertical2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:onClick="onClick"
+                app:icon="@drawable/ic_border_vertical_red_400_24dp"
+                app:iconSize="32dp"
+                app:iconTint="@color/lightgrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/mbtn_damboard_horizontal2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/royalblue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtn_damboard_horizontal2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:onClick="onClick"
+                app:icon="@drawable/ic_border_horizontal_red_400_24dp"
+                app:iconSize="32dp"
+                app:iconTint="@color/lightgrey"
+                app:layout_constraintLeft_toRightOf="@+id/mbtn_damboard_vertical2"
+                app:layout_constraintRight_toLeftOf="@+id/mbtn_chess2"
+                app:layout_constraintTop_toTopOf="@+id/mbtn_damboard_vertical2"
+                app:rippleColor="@color/royalblue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtn_chess2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:onClick="onClick"
+                app:icon="@drawable/chess_blue"
+                app:iconSize="32dp"
+                app:iconTint="@color/royalblue"
+                app:layout_constraintLeft_toRightOf="@+id/mbtn_damboard_horizontal2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mbtn_damboard_horizontal2"
+                app:rippleColor="@color/royalblue" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@+id/cv_top">
+
+        <com.sendoh.quoridor.view.GameView
+            android:id="@+id/gv_game"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtn_chess1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:onClick="onClick"
+                app:icon="@drawable/chess_blue"
+                app:iconSize="32dp"
+                app:iconTint="@color/customred"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/mbtn_damboard_horizontal1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/customred" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtn_damboard_horizontal1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:onClick="onClick"
+                app:icon="@drawable/ic_border_horizontal_red_400_24dp"
+                app:iconSize="32dp"
+                app:iconTint="@color/lightgrey"
+                app:layout_constraintLeft_toRightOf="@+id/mbtn_chess1"
+                app:layout_constraintRight_toLeftOf="@+id/mbtn_damboard_vertical1"
+                app:layout_constraintTop_toTopOf="@+id/mbtn_chess1"
+                app:rippleColor="@color/customred" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtn_damboard_vertical1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:onClick="onClick"
+                app:icon="@drawable/ic_border_vertical_red_400_24dp"
+                app:iconSize="32dp"
+                app:iconTint="@color/lightgrey"
+                app:layout_constraintLeft_toRightOf="@+id/mbtn_damboard_horizontal1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mbtn_damboard_horizontal1"
+                app:rippleColor="@color/customred" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
