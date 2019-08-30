@@ -72,6 +72,25 @@ public class GamePresenter implements IGamePresenter {
             return;
 
         chess.move(direction);
+
+        if (existChess(chess.getX(), chess.getY())) {
+            moveChess(direction);
+        }
+    }
+
+    private boolean existChess(int x, int y) {
+        boolean exist = false;
+        for (int i = 0; i < players.length; i++) {
+            Player player = players[i];
+            if (player.getNumber() == currentPlayer)
+                continue;
+            Chess chessOther = player.getChess();
+            if (chessOther.getX() == x && chessOther.getY() == y) {
+                exist = true;
+                break;
+            }
+        }
+        return exist;
     }
 
     private boolean permitMove(int chessX, int chessY, int direction) {
